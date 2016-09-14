@@ -29,7 +29,9 @@
  */
 
  $(function(){
-
+ 	$("#teamone-shoot").click(function(){
+ 		$("teamone-numhits:input").add(1);
+ 	})
 
 
  })
