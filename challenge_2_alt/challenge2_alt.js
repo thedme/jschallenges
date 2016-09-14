@@ -28,10 +28,77 @@
  *   and how to use it in JS. You will also need to download a sound bite
  */
 
- $(function(){
+$(function(){
+
+ 	function rannum(){
+        return (Math.random() * 10);
+    };
+
  	$("#teamone-shoot").click(function(){
- 		$("teamone-numhits:input").add(1);
- 	})
+ 		var current_shoot_num = $("#teamone-numshots").text();
+ 		current_shoot_num++;
+ 		$("#teamone-numshots").text(current_shoot_num);
+		if (rannum() >= 5){
+            $('#teamone-numhits').html(function(i, val){return +val+1});
+            $('body').css("background-color", "blue");
+            $('body').css("color", "white");
 
 
- })
+ 	 	};
+ 	 })
+ 	
+
+ 	$("#teamtwo-shoot").click(function(){
+ 		var current_shoot_num_two = $("#teamtwo-numshots").text();
+ 		current_shoot_num_two++;
+ 		$("#teamtwo-numshots").text(current_shoot_num_two);
+
+ 		
+
+ 		if (rannum() >= 5){
+        	$('#teamtwo-numhits').html(function(i, val){return +val+1});
+        	$('body').css("background-color", "red");
+        	$('body').css("color", "white");
+ 		};
+ 	})	
+
+
+
+		
+	
+
+	$("#reset").click(function(){
+ 			var reset_count = $("#num-resets").text();
+ 			reset_count++;
+ 			$("#num-resets").text(reset_count);
+ 			$('body').css("color", "black");
+ 			$('body').css("background-color", "white");
+
+
+ 			var shoot_num_to_zero = $("#teamone-numshots").text();
+ 			shoot_num_to_zero = 0;
+ 			$("#teamone-numshots").text(shoot_num_to_zero);
+
+
+ 			var goal_to_zero_team_one = $("#teamone-numhits").text;
+ 			goal_to_zero_team_one = 0;
+ 			$("#teamone-numhits").text(goal_to_zero_team_one);
+
+
+ 			var shoot_num_to_zero_team_two = $("#teamtwo-numshots").text();
+ 			shoot_num_to_zero_team_two = 0;
+ 			$("#teamtwo-numshots").text(shoot_num_to_zero_team_two);
+
+
+ 			var goal_to_zero_team_two = $("#teamtwo-numhits").text;
+ 			goal_to_zero_team_two = 0;
+ 			$("#teamtwo-numhits").text(goal_to_zero_team_two);
+
+
+
+
+ 		
+
+	})
+
+});	
