@@ -89,7 +89,7 @@ $(function(){
  			shoot_num_to_zero_team_two = 0;
  			$("#teamtwo-numshots").text(shoot_num_to_zero_team_two);
 
-
+ 			// set team two goals to zero 
  			var goal_to_zero_team_two = $("#teamtwo-numhits").text;
  			goal_to_zero_team_two = 0;
  			$("#teamtwo-numhits").text(goal_to_zero_team_two);
